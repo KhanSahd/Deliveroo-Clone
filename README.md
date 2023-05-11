@@ -1,6 +1,6 @@
 # Deliveroo Clone
 
-This is a clone of the Deliveroo website, built using [React](https://reactjs.org/), [Sanity.io](https://www.sanity.io/) and [Redux-toolkit](https://redux-toolkit.js.org/). It aims to replicate the core features and functionality of the Deliveroo platform, allowing users to browse restaurants, view menus, and place food orders.
+This is a clone of the Deliveroo website, built using [React](https://reactjs.org/), [Sanity.io](https://www.sanity.io/), and [Redux-toolkit](https://redux-toolkit.js.org/). It aims to replicate the core features and functionality of the Deliveroo platform, allowing users to browse restaurants, view menus, and place food orders.
 
 ## Features
 
@@ -12,7 +12,7 @@ This is a clone of the Deliveroo website, built using [React](https://reactjs.or
 
 ## Technologies Used
 
-- **Frontend**: React-Native, HTML, CSS, JavaScript
+- **Frontend**: React-Native, TailwindCSS
 - **Backend**: Redux-Toolkit
 - **CMS**: Sanity.io 
 
