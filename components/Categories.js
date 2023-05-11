@@ -1,8 +1,16 @@
 import { View, Text, ScrollView } from "react-native";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import CategoryCard from "./CategoryCard";
+import client, { urlFor } from "../sanity";
 
 export default function Categories() {
+  const [categories, setCategories] = useState([]);
+
+  // Fetches the information from our Sanity.io
+  useEffect(() => {
+    client.fetch(`*[_type == 'category']`).then((data) => setCategories(data));
+  }, []);
+
   return (
     <ScrollView
       horizontal
@@ -12,30 +20,14 @@ export default function Categories() {
         paddingTop: 10,
       }}
     >
-      <CategoryCard
-        imgurl="https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        title="Testing 1"
-      />
-      <CategoryCard
-        imgurl="https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        title="Testing 2"
-      />
-      <CategoryCard
-        imgurl="https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        title="Testing 3"
-      />
-      <CategoryCard
-        imgurl="https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        title="Testing 2"
-      />
-      <CategoryCard
-        imgurl="https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        title="Testing 3"
-      />
-      <CategoryCard
-        imgurl="https://images.pexels.com/photos/2147491/pexels-photo-2147491.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-        title="Testing 3"
-      />
+      {/* Category Cards... */}
+      {categories.map((category) => (
+        <CategoryCard
+          key={category._id}
+          imgUrl={urlFor(category.Image).width(200).url()}
+          title={category.name}
+        />
+      ))}
     </ScrollView>
   );
 }
