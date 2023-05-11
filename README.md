@@ -4,10 +4,10 @@ This is a clone of the Deliveroo website, built using [React](https://reactjs.or
 
 ## Screenshots
 
-![Home Screen]("./screenshot-1.png")
-![Restaurant Screen]("./screenshot-2")
-![Cart]("./screenshot-3")
-![Order Being Prepared]("./screenshot-4")
+![Home Screen](./screenshot-1.png)
+![Restaurant Screen](./screenshot-2.png)
+![Cart](./screenshot-3.png)
+![Order Being Prepared](./screenshot04.png)
 
 ## Features
 
